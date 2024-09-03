@@ -38,6 +38,7 @@
 | GET    | `/api/users/profile `            | Obtener usuario            | client  |
 | GET    | `/api/users//getall  `           | ver todos los usuarios     | client  |
 | Patch  | `/api/users/profile/update `     | actualizar datos de usuario| client  |
+| DELETE | `/api/users/deleteUser/:id` | Eliminar citas           | client  |
 
 
 ### Reservations
@@ -46,7 +47,7 @@
 |--------|----------------------------------------|----------------|-------------|
 | POST   | `/api/reservations/newAppointment`     | Crear cita     | client      |
 | PATCH  | `/api/reservations/:id`                | Actualizar     | admin       |
-| DELETE | `/api/reservations/deleteUser/:id`     | Eliminar citas | client      |
+| DELETE | `/api/reservations/delete/:id`     | Eliminar citas | client      |
 | GET    | `/api/myreservation/reservation/:id`   | ver cita por id| client      |
 | GET    | `/api/reservations/get`                |ver todas citas | admin       |
 
@@ -78,7 +79,7 @@
 6. utilizamos ```npm run dev  ``` para ejecutar la base de datos.
 7. utilizamos los Endpoints
 
-## ✔️⚙️Endpoints
+## ✔️⚙️Ejemplo de como utilizar los Endpoints 
    📑📇 Registro 
    ``` http://localhost:3000/api/users/registerAdmin ```
    
@@ -124,6 +125,7 @@ body:
           "last_name" :  "perz",
           "user_id":" 2",
           "Menu": "Menu Arroces",
+          "Carta": Producto 2
           "Comensales": "2",
           "table": "2",
           "date": "12/10/24 12:30pm "

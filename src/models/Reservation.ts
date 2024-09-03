@@ -14,10 +14,13 @@ export class Reservation extends BaseEntity {
     last_name!: string;
 
     @Column()
-    Comensales!: string;
+    Comensales!: number;
 
     @Column()
-    Menu!: number;
+    Menu!: string;
+    
+    @Column({ type: 'varchar', nullable: true })
+    Carta!: string | null;
 
     @Column({name: "user_id"})
     user_id!: number;

@@ -24,12 +24,17 @@ export class CreateReservationTable1723644280531 implements MigrationInterface {
                 },
                 {
                   name: "Comensales",
-                  type: "varchar"
+                  type: "int"
                 },
                 {
                   name: "Menu",
                   type: "varchar"
                 },
+                {
+                  name: "Carta",
+                  type: "varchar",
+                  isNullable: true,
+              },
                 {
                   name: "user_id",
                   type: "int"

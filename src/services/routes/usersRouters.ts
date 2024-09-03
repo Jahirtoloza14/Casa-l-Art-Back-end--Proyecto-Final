@@ -23,7 +23,7 @@ router.post("/login", UserControler.login);
 router.get("/getall",auth, authorizeMiddlewareAdmin(["Admin"]), UserControler.getAll);
 
 // endpoint bring profile
-router.get("/profile",auth,authorizeMiddleware(["Client","Admin"]), UserControler.getLogedUser);
+router.get("/profile",auth,authorizeMiddleware(["Admin"]), UserControler.getLogedUser);
 
 // endpoint update profile
 router.put('/profile/update',auth,authorizeMiddleware(["Client","Admin"]) , UserControler.updateLogedUser);

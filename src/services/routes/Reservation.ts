@@ -8,7 +8,7 @@ import {ReservationController, deleteReservation, getAllReservations, getByLoged
 const router = express.Router();
 
 // bring all reservations
-router.get("/get", getAllReservations);
+router.get("/get",auth, authorizeMiddlewareAdmin(["Admin"]), getAllReservations);
 
 // create reservation
 router.post("/newReservation", ReservationController.createReservation);

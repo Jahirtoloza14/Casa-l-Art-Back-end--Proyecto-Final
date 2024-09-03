@@ -72,19 +72,22 @@ export const deleteReservation = async (req: Request, res: Response) => {
 export const ReservationController = {
   async createReservation(req: Request, res: Response): Promise<void> {
     try {
-      const { id, Comensales, last_name, Name, Menu, user_id, date, table } = req.body;
+      const { id, Comensales,Carta, last_name, Name, Menu, user_id, date, table } = req.body;
       const newReservation = Reservation.create({
         id,
         Name,
         last_name,
-        Menu,
         Comensales,
+        Menu,
+        Carta,
         user_id,
         date: new Date(date),
         table,
 
       });
       await Reservation.save(newReservation);
+      
+
       res.status(201).json({
         message: "Reservation created successfully",
         Reservation: newReservation

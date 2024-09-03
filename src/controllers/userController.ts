@@ -195,7 +195,7 @@ export const UserControler = {
       return;
     }
   },
-  // delete reservation
+  // delete user
   async deleteUser(req: Request, res: Response)  {
     try {
   
@@ -208,7 +208,8 @@ export const UserControler = {
       await userDate.remove();
       res.json({ message: "user deleted" });
     } catch (error) {
-      res.status(500).json({ message: "Something went wrong" });
+      console.error('Error deleting user:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
     }
 }
 

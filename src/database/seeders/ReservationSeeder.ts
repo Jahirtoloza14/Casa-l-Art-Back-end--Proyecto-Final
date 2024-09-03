@@ -7,15 +7,15 @@ import { User } from "../../models/User";
 
 
 
-export class AppointmentSeeder extends Seeder {
+export class ReservationsSeeder extends Seeder {
     protected async generate(): Promise<void> {
       
-        const { APPOINTMENTS } = SeederConfig;
+        const { RESERVATIONS } = SeederConfig;
 
 
 
         const users = await User.find();
-        const jobdates = new ReservationFactory().createMany(APPOINTMENTS);
+        const jobdates = new ReservationFactory().createMany(RESERVATIONS);
         jobdates.forEach(appointment => {
             appointment.users = getRandomValueFromArray(users);
         })

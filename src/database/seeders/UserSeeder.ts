@@ -17,11 +17,15 @@ export class UserSeeder extends Seeder {
       adminUsers.forEach((user) => {
          user.role = UserRoles.ADMIN;
       });
+      //clients
+      const ClientUsers = usersFactory.createMany(CLIENTS);
+      ClientUsers.forEach((user) => {
+         user.role = UserRoles.CLIENT;
+      });
 
-      // clients
-      
+
       // save to database
-      const allUsers = [...adminUsers];
+      const allUsers = [...adminUsers, ...ClientUsers];
       await User.save(allUsers);
    }
 }
